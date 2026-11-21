@@ -38,7 +38,7 @@ Damage is only called where the interval excludes zero.
 ## Status
 
 - [x] Repo, build script, model downloader
-- [ ] Smoke test on Kaggle: build works, output is readable, perplexity is sane
+- [x] Smoke test on Kaggle: build works, output is readable, perplexity is sane ([results](results/00_smoke_test/smoke_test.json))
 - [ ] Reference distributions (Q6_K) per domain
 - [ ] KL divergence runs
 - [ ] Per-subject multiple choice

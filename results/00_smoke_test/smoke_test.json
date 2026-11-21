@@ -1,0 +1,67 @@
+{
+  "llama_commit": "32030c5c910aba7c1e9ab56ce8aa66df729aa5b3",
+  "generation": {
+    "with_lora": [
+      {
+        "prompt": "What is the capital of France? Answer in one sentence.",
+        "output": "The capital of France is Paris.",
+        "seconds": 2.2,
+        "readable_fraction": 1.0
+      },
+      {
+        "prompt": "Write a Python function that returns the n-th Fibonacci number.",
+        "output": "```python\ndef fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a, b = 0, 1\n        for _ in range(2, n + 1):\n            a, b = b, a + b\n        return b\n```\n\nThis function uses an iterative approach to efficiently calculate the n-th Fibonacci number. It starts with 0 and 1, and iterates through the sequence, updating `a` and `b` at each step. The function returns `b` after the loop, which is the n-th Fibonacci number.\n\nFor example:\n- `fibonacci(0)` returns 0\n- `fibonacci(1)` returns 1\n- `fibonacci(2)` returns 1\n- `fibonacci(3)` returns 2\n- `fibonacci(4)` returns 3",
+        "seconds": 28.3,
+        "readable_fraction": 1.0
+      },
+      {
+        "prompt": "A tank holds 120 litres and drains at 8 litres per minute. How many minutes until it is empty? Show the calculation.",
+        "output": "To find the number of minutes it takes for the tank to be empty, we can use the formula:\n\n$$ \\text{Time} = \\frac{\\text{Volume}}{\\text{Rate of Drainage}} $$\n\n**Given:**\n*   Volume of the tank = 120 litres\n*   Rate of drainage = 8 litres per minute\n\n**Calculation:**\n$$ \\text{Time} = \\frac{120 \\text{ litres}}{8 \\text{ litres/minute}} $$\n\n$$ \\text{Time} = 15 \\text{ minutes} $$\n\n**Answer:**\nIt will take **15 minutes** for the tank to be empty.\n\n---\n\n**Verification:**\n*   15 minutes \u00d7 8 litres/minute = 120 litres\n*   The total volume drained equals the initial volume. The calculation is correct.\n\nThe tank will be empty after **15 minutes**.\n\n",
+        "seconds": 28.5,
+        "readable_fraction": 0.99
+      },
+      {
+        "prompt": "Explain in two sentences what a refrigerant does in an air conditioner.",
+        "output": "A refrigerant in an air conditioner absorbs heat from the air inside the system, causing the air to cool. This process is achieved by the refrigerant, typically a gas like refrigerant gas, which changes state from a gas to a liquid as it absorbs heat, thereby lowering the temperature of the surrounding air.",
+        "seconds": 10.0,
+        "readable_fraction": 1.0
+      }
+    ],
+    "no_lora": [
+      {
+        "prompt": "What is the capital of France? Answer in one sentence.",
+        "output": "The capital of France is Paris.",
+        "seconds": 2.1,
+        "readable_fraction": 1.0
+      },
+      {
+        "prompt": "Write a Python function that returns the n-th Fibonacci number.",
+        "output": "```python\ndef fibonacci(n):\n    \"\"\"\n    Returns the n-th Fibonacci number (0-indexed).\n    \n    Args:\n        n (int): The index of the Fibonacci number to return.\n    \n    Returns:\n        int: The n-th Fibonacci number.\n    \"\"\"\n    if n <= 0:\n        return 0\n    if n == 1:\n        return 1\n    \n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n```\n\n**How it works:**\n\n- The function handles the base cases: `n = 0` returns `0`, and `n = 1` returns `1`.\n- It uses an iterative approach with two variables `a` and `b` to track the previous and current Fibonacci numbers.\n- The loop runs from `2`",
+        "seconds": 25.9,
+        "readable_fraction": 1.0
+      },
+      {
+        "prompt": "A tank holds 120 litres and drains at 8 litres per minute. How many minutes until it is empty? Show the calculation.",
+        "output": "To find the number of minutes it takes for the tank to be empty, we can use the formula:\n\n$$ \\text{Time} = \\frac{\\text{Total Volume}}{\\text{Rate of Drainage}} $$\n\n**Given:**\n*   Total Volume = 120 litres\n*   Rate of Drainage = 8 litres per minute\n\n**Calculation:**\n$$ \\text{Time} = \\frac{120 \\text{ litres}}{8 \\text{ litres/minute}} $$\n\n$$ \\text{Time} = 15 \\text{ minutes} $$\n\n**Answer:**\nIt will take **15 minutes** for the tank to be empty.",
+        "seconds": 19.4,
+        "readable_fraction": 1.0
+      },
+      {
+        "prompt": "Explain in two sentences what a refrigerant does in an air conditioner.",
+        "output": "A refrigerant is a substance (such as a gas or liquid) that is used to cool the air inside an air conditioner. It works by absorbing heat from the air, which then lowers the temperature of the air and helps to cool the room.",
+        "seconds": 7.7,
+        "readable_fraction": 1.0
+      }
+    ]
+  },
+  "perplexity": {
+    "with_lora": {
+      "ppl": 10.8225,
+      "stderr": 0.27702
+    },
+    "no_lora": {
+      "ppl": 12.4588,
+      "stderr": 0.34898
+    }
+  }
+}
