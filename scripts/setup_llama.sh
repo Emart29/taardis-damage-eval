@@ -8,11 +8,12 @@ if [ ! -d "$DEST" ]; then
   git clone --depth 1 -b q1_0_g128-port https://github.com/CodeMasterCody3D/taardis-llama.cpp "$DEST"
 fi
 cd "$DEST"
+# The web chat UI is not needed for evals, and its asset download/embed step fails on Kaggle.
 git rev-parse HEAD > /tmp/llama_commit.txt
 if [ "$ARCH" = "cpu" ]; then
-  cmake -B build -DLLAMA_CURL=OFF
+  cmake -B build -DLLAMA_CURL=OFF -DLLAMA_USE_PREBUILT_UI=OFF -DLLAMA_BUILD_UI=OFF
 else
-  cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_NO_VMM=ON -DCMAKE_CUDA_ARCHITECTURES="$ARCH" -DLLAMA_CURL=OFF
+  cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_NO_VMM=ON -DCMAKE_CUDA_ARCHITECTURES="$ARCH" -DLLAMA_CURL=OFF -DLLAMA_USE_PREBUILT_UI=OFF -DLLAMA_BUILD_UI=OFF
 fi
 cmake --build build -j"$(nproc)" --target llama-cli llama-server llama-perplexity
 ls -la build/bin/
